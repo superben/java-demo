@@ -5,7 +5,6 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     APP_SLEEP=0 \
     JAVA_OPTS="" \
     RUN_ARGS="" \
-    APP_NAME_ID="" \
     TZ="Asia/Shanghai"
     
 RUN apk add --no-cache tzdata
