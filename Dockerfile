@@ -1,15 +1,14 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:8-alpine
 
 LABEL description="your description"
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     APP_SLEEP=0 \
     JAVA_OPTS="" \
     RUN_ARGS="" \
-    APP_NAME_ID=""
-
-RUN ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-#RUN dpkg-reconfigure -f noninteractive tzdata
-ENV TZ "Asia/Shanghai"
+    APP_NAME_ID="" \
+    TZ="Asia/Shanghai"
+    
+RUN apk add --no-cache tzdata
 
 RUN mkdir -p /root/app/
 
